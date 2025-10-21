@@ -1,17 +1,20 @@
+import { ColorfulMessage } from "./components/ColorfulMessage";
+
 export const App = () => {
   const onClickButton = () => alert();
   const contentStyle = {
-    color: "blue",// 文字列で定義する
-    fontSize: "45px",  // font-sizeがfontSizeというキャメルケースの記載になる
-    margin: 100, // 数字での記載も可能
+    color: "blue",
+    fontSize: "45px",
+  };
+  const contentStyleB = {
+    color: "green",
+    fontSize: "45px",
   };
   return (
     <>
-      // インラインでスタイルを当てることも可能
       <h1 style={contentStyle}>こんにちは!</h1>
-      <p>おげんきですか？</p>
-      // キャメルケースでイベントを定義：onclick→onClickにする
-      // {}の中は関数を指定できる
+      <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
+      <ColorfulMessage color="green">元気です!</ColorfulMessage>
       <button onClick={onClickButton}>ボタン</button>
     </>
   );

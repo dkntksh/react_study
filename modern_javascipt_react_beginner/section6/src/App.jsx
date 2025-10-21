@@ -3,10 +3,14 @@ import { ColorfulMessage } from "./components/ColorfulMessage";
 
 export const App = () => {
   // numの初期値を()で指定し、更新関数を,の後で指定
+  // 一番上の構造からしか、userXXXのようなフックは呼び出せない
   const [num, setNum] = useState(0);
   const onClickCountUp = () => {
     // numの更新関数を設定する
-    setNum(num + 1);
+    // バッチ化されており、まとめて処理するようになっている
+    setNum((prev) => prev + 1);
+    setNum((prev) => prev + 1);
+    // setNum(num + 1);
   };
   const contentStyle = {
     color: "blue",
